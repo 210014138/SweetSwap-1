@@ -1,0 +1,3081 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Just+Another+Hand&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;   
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+:root{
+ 
+  --orange:#f9ba60;
+  --pink:#e9768f;
+  --white: #fff;
+  --light-color:#666;
+  --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+
+section{
+  padding: 3rem 7%;
+}
+
+
+
+/*--Header starts--*/
+
+.heading{
+  font-size: 4rem;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 6rem;
+}
+
+.heading span{
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+
+.btn{
+  font-size: 1.7rem;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .8rem 3rem;
+  border-radius: .5rem;
+  border: .2rem solid var(--orange);
+  color: var(--orange);
+  background: none;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background: var(--orange);
+  color: #ffffff;
+}
+
+
+.header{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  background: var(--pink);
+  box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--orange);
+}
+
+.header .logo i{
+  color: var(--orange);
+}
+
+.header .navbar a{
+  font-size: 1.7rem;
+  margin: 0 1rem;
+  color: #ffffff;
+}
+
+.header .navbar a:hover,
+.header .icons div:hover{
+  color: var(--orange);
+}
+
+.header .icons div{
+  font-size: 2.5rem;
+  margin-left: 1.7rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#menu-btn{
+  display: none;
+}
+
+/*--Header ends--*/
+
+/* Landing page starts */
+
+.landing-home{
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  background-color: #ffffff;
+}
+
+.landing-home .content{
+  flex: 1 1 40rem;
+  padding-top: 6.5rem;
+}
+
+.landing-home .content h3{
+  font-size: 6rem;
+  color: var(--pink);
+}
+
+.landing-home .content h3 span{
+  color: var(--orange);
+}
+
+.landing-home .content p{
+  font-size: 1.7rem;
+  color: var(--light-color);
+  line-height: 1.8;
+  padding: 1rem 0;
+}
+
+.landing-home .image{
+  flex: 1 1 40rem;
+}
+
+.landing-home .image img{
+  width: 100%;
+  padding: 4rem;
+}
+
+
+/* About Us section of Landing page starts */
+
+.about{
+  background-color:antiquewhite;
+}
+
+.about .row{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.about .row .image{
+  flex:1 50rem;
+}
+
+.about .row .image img{
+  width: 100%;
+  height: 95%;
+}
+
+.about .row .content{
+  flex: 45rem;
+}
+
+.about .row .content h3{
+  font-size: 3.5rem;
+  color: black;
+  line-height: 1.5;
+}
+
+.about .row .content p{
+  font-size: 1.4rem;
+  color: black;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+/*--About Us section ends--*/
+
+
+/* Activities section of Landing page starts*/
+
+.activities .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.activities .box-container .box{
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 2rem;
+  outline: .1rem solid rgba(0,0,0,.1);
+  outline-offset: -1rem;
+}
+
+.activities .box-container .box img{
+  height: 10rem;
+}
+
+.activities .box-container .box:hover img{
+  transform: scale(1.1);
+}
+
+.activities .box-container .box h3{
+  font-size: 2.2rem;
+  padding: 2rem 0;
+  color: black;
+}
+
+/* Activities section of landing page ends */
+
+
+/* Contact Us section of Landing page starts */
+
+.contact{
+  margin-bottom: 40px;
+}
+
+.contact .icons-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+  gap: 1.5rem;
+}
+
+.contact .icons-container .icons{
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 2rem;
+  text-align: center;
+  outline: .1rem solid rgba(0,0,0,.1);
+  outline-offset: -1rem;
+}
+
+.contact .icons-container .icons i{
+  font-size: 2.5rem;
+  height: 6rem;
+  width: 6rem;
+  color: #ffffff;
+  line-height: 6rem;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.contact .icons-container .icons h3{
+  font-size: 2.2rem;
+  padding: 1rem 0;
+  color: black;
+}
+
+.contact .icons-container .icons p{
+  font-size: 1.5rem;
+  line-height: 2;
+  color: var(--light-color);
+}
+
+/*--Contact Us section of landing page ends--*/
+
+/*--Landing page ends--*/
+
+/*-- Login and Register pages start--*/
+.login-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  margin-top: 45px;
+
+}
+
+.registerbox{
+  background:var(--pink);
+  display: flex;
+  flex-direction: column;
+  padding: 25px 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 128px 0;
+  color: #ffffff;
+
+}
+
+.form-box{
+  width: 450px;
+  margin: 0px 10px;
+
+}
+
+.form-box header{
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F9F1E3;
+  margin-bottom: 10px;
+  
+}
+
+.form-box form .field input{
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+  height: 40px;
+  width: 100%;
+  border-radius: 10px;
+  
+
+}
+
+.form-box form .field label {
+  font-size: 14px; 
+}
+
+.register-button{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+}
+
+.links{
+  font-size: 14px;
+  margin-top: 20px;
+  
+}
+
+.links a{
+  color: black;
+  
+}
+
+
+.loginbtn{
+  height: 45px;
+  background: var(--orange);
+  border: 0;
+  border-radius: 5px;
+  color: #ffffff ;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+  padding:0px 10px;
+
+}
+
+.loginbtn:hover{
+  background: rgb(233, 198, 133);
+  color: black;
+}
+
+.submit{
+  width: 100%;
+}
+
+/*--Login and Register pages end--*/
+
+
+/*--Footer starts--*/
+
+.footer{
+  background: var(--pink);
+}
+
+.footer .box-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem,0.5fr));
+  gap: 1rem;
+}
+
+.footer .box-container .box h3{
+  font-size: 2.2rem;
+  color: var(--orange);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box p{
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding: 1rem 0;
+  line-height: 2;
+}
+
+.footer .box-container .box a{
+  display: block;
+  font-size: 1.4rem;
+  color: var(--white);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+  color: var(--orange);
+}
+
+.footer .box-container .box a i{
+  padding-right: .5rem;
+  color: var(--orange);
+}
+
+/*--Footer ends--*/
+
+
+
+/*--Dashboard starts--*/
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(--pink);
+  transition: all 0.3s ease;
+  z-index: 100;  
+}
+
+.sidebar li{
+  height: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+
+
+.sidebar .text{
+  color: #ffffff;
+  transition: all 0.3s ease;
+  font-size: 17px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+
+
+.sidebar header{
+  position: relative;
+}
+
+
+.sidebar header .logo-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.sidebar .menu{
+  margin-top: 60px;
+}
+
+
+.sidebar li a{
+  list-style: none;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+   
+}
+
+
+.sidebar li a:hover {
+  background-color: var(--orange);
+  color: var(--sidebar-color);
+
+}
+
+
+
+.menu a.active{
+  background-color: var(--orange);
+}
+
+
+.sidebar .menu-bar{
+  height: calc(100% - 55px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+.menu-bar::-webkit-scrollbar{
+  display: none;
+}
+
+
+.home {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  width: calc(100% - 250px); 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+}
+
+.home .text {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  margin-left: auto; 
+  margin-right: 270px; 
+}
+
+
+.text-right {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  
+}
+
+.level-box {
+  background-color: var(--pink); 
+  border: 1px solid #cccccc; 
+  border-radius: 5px; 
+  padding: 5px 30px;
+  margin-bottom: 10px; 
+  margin-right: 40px;
+  margin-top: 10px;
+}
+
+.level {
+  font-size: 16px; 
+  color: #ffffff; 
+}
+
+
+.points {
+  font-size: 15px;
+  display: flex; 
+  align-items: center; 
+}
+
+.points img {
+  margin-right: 5px;
+}
+
+
+.profile {
+  margin-left: 40px; 
+  font-size: 17px; 
+ 
+}
+
+
+.dropbtn {
+  width: 100px;
+  color: black;
+  padding: 16px;
+  font-size: 17px;
+  border: none;
+  background-color: #ffffff;
+  margin: 0;
+
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+  
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+  
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 15px;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #dddddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.welcome-message-text{
+  font-size: 25px;
+}
+  
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 10px; 
+  margin-left: 250px;
+  margin-top: 10px;
+  height: 72vh;
+  padding: 20px;
+  
+}
+
+.item {
+ 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+    
+}
+
+.item h4 {
+  margin-top: 0; 
+}
+
+.item3{    
+  width: 400px;
+}
+
+.item-heading-text{
+  font-size: 20px;
+}
+
+.item1-heading{
+  display: flex;
+  align-items: center;
+}
+
+
+.item1-heading img{
+  margin-right: 10px;
+}
+
+
+.item2-heading{
+  display: flex;
+  align-items: center;
+}
+
+
+.item2-heading img{
+  margin-left: 20px;
+}
+
+.item3-heading{
+  display: flex;
+  align-items: center;
+}
+
+
+.item3-heading img{
+  margin-left: 20px;
+}
+
+.welcome-message {
+  margin-left: 250px;
+  margin-top: 60px;
+  padding: 30px;
+  font-size: 20px;
+  height: 130px;
+}
+.plan-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto; 
+  grid-gap: 10px; 
+  width: 100%;
+}
+
+.box1, .box2 {
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 100%;
+  height: 220px; 
+  max-height: 300px;
+  position: relative; 
+}
+
+.box1{
+background-color: rgb(197, 241, 255);
+  margin-top: 20px;
+}
+
+.box1-heading {
+  display: flex;
+  align-items: center;
+}
+
+.box1-subheading {
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+#start-task-btn {
+  position: absolute; 
+  bottom: 20px; 
+  right: 20px; 
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.box2-heading{
+  display: flex;
+  align-items: center;
+}
+
+.box1-heading img{
+  margin-right: 10px;
+}
+
+.box2{
+  background-color: rgb(255, 218, 149);
+  margin-top: 10px;
+}
+
+.box2-heading img{
+  margin-right: 10px;
+}
+
+.welcome-heading{
+  display: flex;
+  align-items: center;
+  
+}
+
+.welcome-heading img{
+  margin-right: 10px;
+ 
+}
+
+
+.box-heading{
+  font-weight: normal;
+  font-size: 20px;
+  
+}
+
+/*-- Daily Goals section of Dashboard starts--*/
+
+.goal-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  width: 420px;
+  max-width: 100%;
+  height: 500px; 
+  max-height: 100%;
+  position: relative; 
+
+}
+
+.goal-heading{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.goal-section {
+  width: 100%;
+
+}
+
+.goal-list {
+  list-style-type: none;
+  padding: 0;
+  height: 460px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.goal-list li {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.goal-list li:hover {
+  background-color: #e3e3e3;
+}
+
+li{
+  font-size: 17px;
+}
+ 
+/*--Daily Goals section of Dashboard ends--*/ 
+
+
+/*--Badges section of Dashboard starts--*/
+
+.badge-heading {
+  margin-top: 0;
+  padding: 0;
+  text-align: center; 
+}
+
+.badge-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  margin-top: 20px;
+  margin-left: 10px;
+  
+}
+
+.badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.badge-list li {
+  display: inline-block; 
+  margin: 10px;
+  
+}
+
+/*--Badges section of Dashboard ends--*/
+
+
+/*--Activities for Daily Tasks starts--*/
+
+.daily-quiz-container {
+  width:100%;
+  max-width: 1500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  
+}
+
+.daily-quiz-heading {
+  color: #ff6600; 
+  text-align: center;
+}
+.question{
+  margin-bottom: 40px;
+  font-weight: normal;
+ 
+}
+
+.question p{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.question label{
+  font-size: 15px;
+}
+
+.activity-heading{
+  text-align:center;
+}
+
+.activity-text {
+  margin-bottom: 40px;
+}
+
+.activity-text p{
+  font-size: 15px;
+}
+
+.options{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.options label {
+  display: inline-block; 
+  align-items: center; 
+  justify-content: center;
+  margin-bottom: 10px; 
+}
+
+.options input[type="radio"] {
+  
+  margin-right: 10px;
+}
+
+.submit-btn {
+  background-color: #ff6600; 
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #e64d00; 
+}
+
+
+#activity_details{
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff; 
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.congratulations-box {
+  width: 400px; 
+  height: auto; 
+  background-color: #f0f0f0;
+  border: 2px solid #4CAF50; 
+  color: #4CAF50;
+  padding: 20px;
+  margin: auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  font-size: 25px;
+}
+
+.complete-button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #007bff; 
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.complete-button a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+.completed {
+  display: none;
+}
+
+/*--Activities for Daily Tasks ends--*/
+
+
+/* Media query for Dashboard page for screens smaller than 1000px */
+
+@media screen and (max-width: 1000px) {
+  .grid-container {
+      grid-template-columns: 1fr; 
+      margin-left: 260px; 
+  }
+  .item {
+    width: 100%; 
+}
+
+  .welcome-message {
+      margin-left: 260px; 
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .plan-container {
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .box1 {
+    grid-row: 1; 
+    grid-column: 1;
+  }
+
+  .box2 {
+    grid-row: 2; 
+    grid-column: 1;
+  }
+}
+
+
+/*--Dashboard page ends--*/
+
+
+/*--Profile page starts--*/
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 30% 70%; 
+  padding: 10px;
+  margin-left: 230px;
+  margin-right: 20px;
+  margin-top: 130px;
+  
+}
+
+.profile{
+  background-color: rgb(253, 245, 245);
+  padding: 10px;
+  border-radius: 20px;
+  
+}
+
+.user {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+   
+}
+
+
+.image-form{
+  padding: 10px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.upload-button {
+  width: 130px; 
+  height: 50px;
+  cursor: pointer;
+}
+
+
+.update-button{
+  margin-top: 20px;
+  width: 130px; 
+  height: 50px;
+  cursor: pointer;
+}
+
+.profile-heading{
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.user-info-heading{
+  font-size: 20px;
+  padding: 10px;
+}
+
+
+.info-form{
+  padding: 10px;
+}
+
+
+input {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  color: #333333;
+}
+
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff; 
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.update-button{
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update-button:hover{
+  background-color: #0056b3;
+}
+
+/*--Profile page ends--*/
+
+
+/*--Challenges page starts--*/
+
+.quiz-container{
+  margin-top: 80px;
+  margin-left: 240px;
+}
+
+.quiz-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  padding: 45px;
+  margin-left: 15px;
+  margin-top: 30px;
+  
+}
+
+.quiz {
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  height: 285px;
+}
+
+.points-badge {
+  position: absolute;
+  top: 10px; 
+  right: 15px; 
+  background-color: #2ecc71;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+
+
+.quiz h2{
+  margin-top: 0;
+  font-size: 15px;
+  
+}
+  
+.quiz p{
+  font-size: 13px;
+}
+
+.quiz:nth-child(1) {
+  position: relative; 
+  border: 1px solid #ccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #e9f1fe;
+  height: 285px;
+  overflow: hidden;
+  
+}
+  
+.quiz:nth-child(2){
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #f7d3d2;
+  height: 285px;
+  overflow: hidden;
+}
+
+.quiz:nth-child(3) {
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #eeffcd;
+  height: 285px;
+  overflow: hidden;
+  
+}
+  
+.quiz:nth-child(4) {
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #fdfaae;
+  height: 285px;
+  overflow: hidden;
+  
+}
+  
+.quiz:nth-child(5) {
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #b2e9ff;
+  height: 285px;
+  overflow: hidden;
+  
+}
+  
+.quiz:nth-child(6) {
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #ffcea2;
+  height: 285px;
+  overflow: hidden;
+  
+}
+  
+  
+.start-button {
+  position: absolute; 
+  bottom: 20px; 
+  right: 20px; 
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  
+  
+.start-button a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.start-button:hover{
+
+  background-color: #45a049;
+
+}
+  
+.tooth-image {
+  width: 180px;
+  position: absolute; 
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+  
+.glove-image{
+  width: 180px;
+  position: absolute; 
+  top: 65%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  
+}
+  
+.riddles-image {
+  width: 130px;
+  position: absolute; 
+  top: 65%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.detox-image {
+  width: 140px;
+  position: absolute; 
+  top: 65%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+.star-image{
+  width: 130px;
+  position: absolute; 
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+  
+.swap-image{
+  width: 130px;
+  position: absolute; 
+  top: 65%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+/*--Individual quiz layout for Challenges page--*/
+
+h1{
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+h2{
+  font-size: 2rem ;
+  margin-bottom: 2rem;
+}
+
+
+.quiz-new-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  margin: auto;
+}
+  
+  
+.flex-column{
+  display: flex;
+  flex-direction: column;
+
+}
+  
+.flex-center{
+  justify-content: center;
+
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.text-center{
+  text-align: center;
+}
+.hidden{
+  display: none;
+}
+
+.quiz-button{
+  font-size: 1.5rem;
+  padding: 2rem 0;
+  width: 30rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #000000;
+  background: #007bff;
+  border-radius: 4px;
+}
+
+.quiz-button:hover{
+  cursor: pointer;
+  background: rgb(52, 140, 255) ;
+  
+}
+
+.quiz-button[disabled]:hover{
+  cursor: not-allowed;
+}
+
+
+.textField{
+  font-size: 17px;
+}
+
+#submitBtn{
+  width: 200px;
+  padding: 20px;
+  background: var(--pink);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-size: 1.7rem;
+  margin-top: 30px;
+  
+}
+
+#highscore-button{
+ 
+  background: yellow;
+}
+
+#highscore-button:hover{
+
+  background: rgb(255, 255, 160);
+}
+
+.choices{
+  display: flex;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  border-radius: 4px;
+  background: var(--pink);
+  font-size: 1.5rem;
+  min-width: 80rem;
+}
+
+.choices:hover{
+  cursor: pointer;
+  background: pink;
+  
+
+}
+
+.choice-letter{
+  padding: 2rem 2.5rem;
+  color: white;
+}
+
+
+
+.choiceText{
+  padding: 2rem;
+  width: 100%;
+  color: white;
+}
+
+.choiceText:hover{
+  color: black;
+}
+
+
+@media screen and (max-width: 760px) {
+  .quiz-new-container {
+      width: 90%; 
+  }
+}
+
+
+#top{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.top-section{
+  text-align: center;
+  font-size: 1.5rem;
+  
+}
+
+#progressText{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.scoreNumber{
+  text-align: center;
+
+}
+
+#score{
+  color: var(--orange);
+}
+
+#progressBar{
+  width: 20rem;
+  height: 2rem;
+  border: 0.2rem solid var(--orange);
+  margin-top: 1rem;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+#progressBarFilled{
+  height:100%;
+  background: var(--orange);
+  width: 0%;
+}
+
+/*--Media queries for Challenges page for screens smaller than 1000px--*/
+
+@media screen and (max-width: 1000px) {
+  .quiz-list {
+    grid-template-columns: repeat(1, 1fr); 
+    padding: 20px; 
+    margin-left: 20px; 
+  }
+
+  .quiz {
+    height: auto; 
+  }
+
+}
+
+
+/*--Sugar detox page starts--*/
+
+#calendar {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  overflow:hidden;
+}
+
+
+.fc-toolbar {
+  background-color: var(--pink);
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+.fc-toolbar-title {
+  font-size: 24px;
+}
+
+
+#calendar .fc-prev-button, #calendar .fc-next-button {
+  color: #ffffff; 
+  background-color: var(--orange);
+  border: none;
+  margin-left: 5px;
+}
+
+
+.fc-daygrid-day {
+  border: 1px solid #ccc;
+  cursor:pointer;
+}
+
+
+.fc-day-today {
+  background-color: #ffc107;
+}
+
+.fc-day-selected {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 0; 
+  right: 10px; 
+  cursor: pointer;
+  font-size: 30px;
+
+}
+
+
+.tracker-heading{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  margin-top: 30px;
+}
+
+
+
+.modal-options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color-options button:hover {
+    background-color: #0056b3;
+}
+
+
+.sugar-free {
+    position: relative;
+    background-color: #b2ffb2; 
+}
+.sugar-free::after {
+    content: '✔️';
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 20px;
+    color: green;
+
+}
+
+.not-sugar-free {
+    position: relative;
+    background-color: #ffb2b2; 
+}
+.not-sugar-free::after {
+    content: '❌';
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    font-size: 20px;
+    color: red;
+
+}
+
+/*--Sugar detox page ends--*/
+  
+/*--Quests page starts--*/
+
+.quest-container{
+  margin-top: 100px;
+  margin-left: 270px;
+  padding: 10px;
+  
+}
+
+.quest-list{
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  list-style: none;
+  padding: 10px;
+  margin-top: 10px;
+    
+}
+
+
+
+.quest:nth-child(1) {
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #a3d690;
+  height: 285px;
+  overflow: hidden;
+  
+}
+
+.quest h2{
+  margin-top: 0;
+  font-size: 15px;
+  margin-bottom: 5px;
+
+}
+
+.quest p{
+  font-size: 13px;
+}
+  
+.ozzy{
+  width: 180px;
+  position: absolute; 
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+
+.knight{
+  width: 150px;
+  position: absolute;
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+
+.quest:nth-child(2){
+  position: relative;
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #b3cef0;
+  height: 285px;
+  overflow: hidden;
+  
+}
+  
+.detectives-image{
+  width: 150px;
+  position: absolute; 
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+
+.quest:nth-child(3){
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: #f3ac43;
+  height: 285px;
+  overflow: hidden;
+}
+
+  
+  
+.girl-with-backpack-image{
+  width: 150px;
+  position: absolute; 
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+
+.quest:nth-child(4){
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: rgb(250, 219, 119);
+  height: 285px;
+  overflow: hidden;
+}
+
+.quest:nth-child(5){
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: rgb(196, 181, 253);
+  height: 285px;
+  overflow: hidden;
+}
+  
+.quest:nth-child(6){
+  position: relative; 
+  border: 1px solid #cccccc;
+  padding: 22px;
+  border-radius: 30px;
+  background-color: rgb(105, 156, 228);
+  height: 285px;
+  overflow: hidden;
+}
+  
+.boy-dreaming-image{
+  width: 160px;
+  position: absolute; 
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+
+.treasure-image{
+  width: 120px;
+  position: absolute; 
+  top: 65%; 
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+
+/*--Media queries for Adventures page for screens smaller than 1100px--*/
+
+@media screen and (max-width: 1100px) {
+  .quest-list {
+    grid-template-columns: repeat(1, 1fr); 
+    padding: 20px; 
+    margin-left:0; 
+  }
+
+  .quest {
+    height: auto; 
+  }
+}
+
+/*--Adventures page ends--*/
+  
+
+
+/*--End page--*/
+
+
+
+.leaderboard-username {
+  margin-bottom: 1rem;
+  width: 40rem;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  border: none;
+}
+
+
+
+
+.end-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  width: 40rem; 
+  padding: 20px;
+  margin-left: 20px;
+  
+}
+
+.username-field{
+  width: 35rem;
+}
+
+#end-text {
+  font-size: 2.4rem;
+  color: black;
+  text-align: center;
+}
+
+
+
+#finalScore {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+#resultMessage {
+  font-size: 2rem;
+  text-align: center;
+  padding: 30px;
+}
+
+
+#back-button:hover {
+  background: pink;
+  color: black;
+}
+
+.back-button,
+.leaderboard-button {
+  
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-size: 1.7rem;
+  margin-top: 20px;
+  width: 35rem; 
+  text-decoration: none;
+}
+
+#pointsForm{
+  margin: 0;
+}
+
+
+.back-button {
+  background: var(--pink);
+  color: #ffffff;
+  margin-bottom: 20px;
+  
+}
+  
+.back-button:hover {
+  background: pink;
+  color: black;
+}
+
+.leaderboard-text{
+  font-size: 18px;
+  font-weight: bold;
+
+}
+.leaderboard-button {
+  background: #ffd800;
+  color: black;
+  
+}
+
+.leaderboard-subtext{
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.leaderboard-button:hover {
+  background: #fde979;
+}
+
+
+
+
+/*--Sugarland Adventures starts--*/
+
+.go-back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 20px 30px;
+  background-color: #e9768f;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 3; 
+  text-decoration: none;
+  color: #ffffff;
+
+}
+
+
+.go-back-btn:hover {
+  background-color: pink;
+}
+
+.story-container{
+ 
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: url(images/forest.jpg);
+  background-size: cover;
+}
+
+.story-box{
+  width: 800px;
+  height: 500px;
+  background-color: #ffffff;
+  border: 7px solid #496066;
+  padding: 20px;
+  margin: 20px;
+}
+
+.story-content {
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px; 
+}
+
+#option-buttons{
+  margin-top: 30px;
+}
+
+.btn-grid{
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  gap: 20px;
+  margin-top: 20px;
+
+}
+
+.btns{
+  background: #878171;
+  min-width: 250px;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btns:hover{
+  background: #9e9c95;
+  color: black;
+  border: none;
+}
+
+#story-text{
+  font-size: 30px;
+  font-family: "Handlee", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*--Sugarland Adventures ends--*/
+
+
+/*--Sweet Escape starts--*/
+.sweet-escape-container{
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: url(images/kingdom.jpg);
+  background-size: cover;
+}
+
+
+.sweet-escape-box{
+  width: 800px;
+  height: 500px;
+  background-color: #ffffff;
+  border: 7px solid #695958;
+  padding: 20px;
+  margin: 20px;
+}
+
+.sweet-escape-btns{
+  background: #DEBD7E;
+  min-width: 250px;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.sweet-escape-btns:hover{
+  background: #ebcf9c;
+  color: black;
+  border: none;
+}
+
+/*--Sweet Escape ends--*/
+
+
+/*--Sugar Safari starts--*/
+
+.sugar-safari-container{
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: url(images/island.jpg);
+  background-size: cover;
+}
+
+.sugar-safari-btns{
+  background: #b1b956;
+  min-width: 250px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.sugar-safari-btns:hover{
+  background: #dee2a5;
+  color: black;
+}
+
+/*--Sugar Safari ends--*/
+
+/*--Sweet Tooth Detective starts--*/
+
+.detective-container{
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: url(images/sweet2.jpg);
+  background-size: cover;
+}
+
+.detective-box{
+  width: 800px;
+  height: 500px;
+  background-color: #ffffff;
+  border: 7px solid #722848;
+  padding: 20px;
+  margin: 20px;
+}
+
+.detective-btns{
+  background: #df7385;
+  min-width: 250px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.detective-btns:hover{
+  background: rgb(236, 159, 172);
+  color: black;
+}
+
+/*--Sweet Tooth Detective ends--*/
+
+/*--Sweet Dreams starts--*/
+
+.sweet-dreams-container{
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: url(images/dreamworld.jpg);
+  background-size: cover;
+}
+
+.sweet-dreams-box{
+  width: 800px;
+  height: 500px;
+  background-color: #ffffff;
+  border: 7px solid #A93FA1;
+  padding: 20px;
+  margin: 20px;
+}
+
+.sweet-dreams-btns{
+  background: #7674B4;
+  min-width: 250px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.sweet-dreams-btns:hover{
+  background: #aaa8db;
+  color: black;
+}
+
+/*--Sweet Dreams ends--*/
+
+/*-- Treasure Hunt starts --*/
+
+.treasure-hunt-container{
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: url(images/island2.jpg);
+  background-size: cover;
+  
+}
+
+.treasure-hunt-btns{
+  background: #7DCCDB;
+  min-width: 250px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  outline: none;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.treasure-hunt-btns:hover{
+  background: #aae0eb ;
+  color: black;
+}
+
+.treasure-hunt-box{
+  width: 800px;
+  height: 500px;
+  background-color: #ffffff;
+  border: 7px solid #221C2B;
+  padding: 20px;
+  margin: 20px;
+}
+
+/*--Treasure hunt ends--*/
+
+
+/*--Sugar rush riddles starts--*/
+
+.textField{
+  font-size: 17px;
+}
+
+#submitBtn{
+  width: 200px;
+  padding: 20px;
+  background: var(--pink);
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  font-size: 1.7rem;
+  margin-top: 30px;
+  
+}
+
+
+/*-- Leaderboard Table starts--*/
+
+
+.crown {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle; 
+  margin-right: 10px; 
+}
+
+
+/*--Leaderboard Table ends--*/
+
+
+
+/*Water intake tracker starts*/
+
+.tracker-container {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  margin-left: 270px;
+
+}
+
+.water-intake-container,
+.intake-history-container {
+  flex: 1;
+  max-width: 50%; 
+}
+
+.water-intake-container {
+  text-align: center;
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 27px;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+
+
+.intake-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intake-form label {
+  display: block;
+  text-align: left; 
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #007bff;
+}
+
+
+.intake-form select {
+  display: block; 
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid #007bff;
+  width: 100%;
+}
+
+
+.log-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.log-button:hover {
+  background-color: #0056b3;
+}
+
+.history-title {
+  font-size: 24px;
+  margin-top: 40px;
+  color: #007bff;
+}
+
+.intake-history-container{
+  margin-top: 80px;
+}
+
+.intake-history {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.intake-history p {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.water-intake-container img{
+  width: 300px;
+  height: 300px;
+}
+
+.intake-item {
+  display: inline-block; 
+  vertical-align: middle; 
+  margin-right: 10px; 
+  background-color: rgb(218, 246, 255); 
+  padding: 5px;
+  margin-top: 10px;
+  width: 85%;
+
+}
+
+.todays-intake{
+  background-color: none;
+}
+
+
+/*--Water tracker ends--*/
+
+
+/*--Sugar Tracker--*/
+
+.sugar-tracker-container,
+.intake-history-container {
+  flex: 1;
+  max-width: 50%; 
+}
+
+.sugar-tracker-container{
+  
+    text-align: center;
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 20px;
+ 
+
+}
+
+.sugar-tracker-title{
+  font-size: 27px;
+  color: var(--pink);
+  margin-top: 20px;
+}
+
+.sugar-history-title{
+  font-size: 24px;
+  margin-top: 40px;
+  color: var(--pink);
+}
+
+.sugar-total{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  height: 200px;
+ 
+}
+
+.sugar-history{
+  height: 200px;
+}
+
+.sugar-intake-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.sugar-intake-form label {
+  display: block;
+  text-align: left; 
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: var(--pink);
+}
+
+
+.sugar-intake-form select {
+  display: block; 
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--pink);
+  width: 100%; 
+}
+
+.sugar-history ul {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+.sugar-history li {
+  margin-bottom: 5px;
+}
+
+.sugar-total-text{
+  
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.sugar-bowl{
+  margin-top: 30px;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 30px;
+}
+
+
+.current-sugar-intake{
+  font-size: 24px;
+  margin-top: 40px;
+  color: var(--pink);
+}
+
+.log-sugar-intake-button{
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.sugar-intake-item {
+  display: inline-block; 
+  vertical-align: middle; 
+  margin-right: 10px; 
+  background-color: rgb(252, 226, 230);
+  padding: 15px;
+  margin-top: 10px;
+  width: 85%;
+  font-size: 17px;
+}
+
+
+
+/*--Food Chart starts--*/
+
+.food-chart-container{
+  text-align: center; 
+  margin-top: 110px;
+  margin-left: 300px;
+}
+
+.chart-key {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+
+}
+.chart-key h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: normal;
+  
+}
+
+.food-chart {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 0;
+
+  
+}
+
+.food-chart .chart-card {
+  background-color: #cccccc; 
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  width: 290px;
+  height: 200px;
+  margin-left: 5px;
+
+}
+.chart-card:nth-child(1){
+  background: #F19796;
+}
+
+
+.chart-card:nth-child(2){
+  background-color: #ff8097;
+
+}
+
+.chart-card:nth-child(3){
+  background-color: #fdb086;
+}
+
+.chart-card:nth-child(4){
+  background-color: #ffa0cc;
+}
+
+.chart-card:nth-child(5){
+  background-color: #E7B09C;
+}
+
+.chart-card:nth-child(6){
+  background-color: #aadab3;
+}
+
+.chart-card:nth-child(7){
+  background-color: #f5efe1;
+}
+
+.chart-card:nth-child(8){
+  background-color: #fae699;
+}
+
+.chart-card:nth-child(9){
+  background-color: #cdb6b2;
+}
+
+.chart-card:nth-child(10){
+  background-color: #c9ecff;
+}
+
+.chart-card:nth-child(11){
+  background-color: #f7c97f;
+}
+
+.chart-card:nth-child(12){
+  background-color: #89f4b7;
+}
+
+.chart-card p{
+  margin-top: 10px;
+  font-size: 17px;
+ 
+  
+}
+
+
+
+.chart-card img{
+  width: 110px;
+  height: 110px;
+  margin: 0;
+}
+
+
+.food-chart .chart-card:nth-child(1),
+.food-chart .chart-card:nth-child(2),
+.food-chart .chart-card:nth-child(3),
+.food-chart .chart-card:nth-child(4) {
+  grid-row: 1;
+}
+
+
+.food-chart .chart-card:nth-child(5),
+.food-chart .chart-card:nth-child(6),
+.food-chart .chart-card:nth-child(7),
+.food-chart .chart-card:nth-child(8) {
+  grid-row: 2; 
+}
+
+.food-chart .chart-card:nth-child(9),
+.food-chart .chart-card:nth-child(10),
+.food-chart .chart-card:nth-child(11),
+.food-chart .chart-card:nth-child(12) {
+  grid-row: 3; 
+}
+
+
+.food-chart .chart-card:nth-child(13),
+.food-chart .chart-card:nth-child(14),
+.food-chart .chart-card:nth-child(15),
+.food-chart .chart-card:nth-child(16) {
+  grid-row: 4; 
+}
+
+/*--Food Chart ends--*/
+
+
+/*--Knight's Menu starts--*/
+.mighty-menu-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  margin-left: 120px;
+  margin-top: 100px;
+  position: relative;
+}
+
+.arthur-message {
+  text-align: right; 
+
+}
+
+
+.arthur-message h2{
+  font-size:17px;
+  text-align:center;
+  margin-left: 50px;
+}
+
+.sprite-animation {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(718px / 3);
+  height: 347px;
+  background: url('images/spritesheet.png');
+  animation: none;
+}
+
+.animate {
+  animation: animate 0.7s steps(3); 
+}
+
+@keyframes animate {
+  from {
+      background-position: 0;
+  }
+  to {
+      background-position: -718px;
+  }
+}
+
+.food-options-container {
+  text-align: center;
+  top: 350px;
+  position: relative;
+}
+
+.food-options-container h2{
+  font-weight: normal;
+  position: relative;
+}
+
+.food-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+.food-option {
+  width: 150px;
+  height: 130px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.food-option:nth-child(1) {
+  background-color: #e7b09c;
+}
+
+.food-option:nth-child(3){
+  background-color: #F4A4AC;
+}
+
+.food-option:nth-child(4){
+  background-color: #ED0933;
+}
+
+.food-option:nth-child(2){
+  background-color: #FCBC7A;
+}
+
+.food-option:nth-child(5){
+  background-color: #FAE8E0;
+}
+
+.food-option img {
+  margin-top: 10px;
+}
+
+#messageArea {
+  text-align: center;
+  margin-top: 370px; 
+  padding: 10px; 
+  background-color: #f8d7da; 
+  color: #721c24; 
+  border: 1px solid #f5c6cb; 
+  border-radius: 5px; 
+  font-size: 18px; 
+  font-weight: bold; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  position: absolute; 
+  top: 100%; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#messageArea.green-message {
+  background-color: #4CAF50; 
+  color: #ffffff;
+}
+
+.yellow-message {
+  background-color: #FFC107; 
+  color: black;
+}
+
+.red-message {
+  background-color: #f44336; 
+  color: #ffffff;
+}
+
+/*--Knight's Menu ends--*/
+
+
+/*--Recipes starts--*/
+
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: 1fr;
+  margin-top: 250px;
+  margin-left: 260px;
+  grid-column-gap: 10px; 
+}
+
+.recipe-option {
+  
+  text-align: center; 
+  max-width: 370px;
+  height: 270px;
+  margin-left: 30px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  position: relative;
+  transition: transform 0.3s ease; 
+  cursor: pointer;
+}
+
+
+.recipe-option a{
+  text-decoration: none;
+  color: black;
+  display: flex;
+}
+
+.recipe-option h2{
+  font-size: 25px;
+  font-weight: normal;
+}
+
+
+
+.recipe-option img{
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.recipe-option:first-child{
+  background-color: #FFCBA4;
+}
+
+.recipe-option:nth-child(2){
+  background-color: #E4E69B;
+}
+
+.recipe-option:nth-child(3){
+  background-color: #E09E94 ;
+}
+
+.recipe-option:hover {
+  transform: translateY(-10px); 
+}
+
+
+@media screen and (max-width: 1000px) {
+  .recipes {
+    grid-template-columns: repeat(1, 1fr); 
+    margin-top: 100px;
+ 
+
+  }
+
+  .recipe-option {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+}
+
+
+/*--Recipes ends--*/
+
+/*--Breakfast Recipes starts--*/
+
+.carousel{
+  margin-left:250px;
+}
+
+.carousel-item img {
+  margin: 0 auto; 
+  display: block; 
+  margin-top: 110px;
+  max-width: 450px;
+  height: 100vh;
+  width: 100vw;
+  max-height: 600px; 
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  
+}
+
+
+/*--Breakfast Recipes ends--*/
+
+
+/*--Healthy Eating Tips starts--*/
+
+.healthy-eating-container {
+  text-align: center;
+  margin-top: 80px;
+  margin-left: 270px;
+}
+
+.game-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.game-message{
+  display: block;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+.game-heading img {
+  margin-left: 10px; 
+  margin-top: -10px;
+}
+
+.tips{
+  margin-top: 140px;
+  margin-left: 290px;
+}
+
+
+.tip{
+  width:95%;
+  height: 60px;
+  padding:15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+
+.tip img {
+  margin-right: 10px; 
+}
+
+
+.tip.tip1 {
+  background-color:#FBE7C6;
+}
+
+.tip.tip2{
+  background-color: #A0E7E5;
+}
+
+.tip.tip3{
+  background-color: #B4F8C8;
+}
+
+.tip.tip4{
+  background-color: #FFAEBC;
+}
+
+.tip.tip5{
+  background-color: #D3BBDD;
+}
+
+
+.tip.tip6{
+  background-color: #F8EA8C;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.category {
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 20px;
+  position: relative;
+  border-radius: 20px;
+  font-size: 17px;
+}
+
+.foods {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.food {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin:10px;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+
+
+.food img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.category.highlighted {
+  background-color: lightgreen;
+}
+
+
+/*--Helathy Eating Tips ends--*/

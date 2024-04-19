@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugarland Adventures</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a href="quests.php" class="go-back-btn">Back to Quests</a>
+    <div class="story-container">
+        <div class="story-box">
+            <div class="story-content">
+                <div id="story-text">Text</div>
+                <div id="option-buttons" class="btn-grid">
+                    <button class="btns">Option 1</button>
+                    <button class="btns">Option 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const textElement = document.querySelector('#story-text');
+const optionButtonsElement = document.querySelector('#option-buttons');
+
+let state = {}
+
+
+function startGame() {
+    state = {}
+    showTextNode(1)
+}
+
+
+const textNodes = [
+    {
+        id: 1,
+        text: "Once upon a time, in a magical land called Sugarland...",
+        options:[
+            {
+                text: "Start",
+                nextText:2
+            },
+           
+        ]
+    },
+    
+    
+    {
+        id: 2,
+        text: "Ozzy meets a wise wizard who tells him that too much sugar can make him feel tired and sick.",
+        options:[
+            {
+                text: "Ask the wizard for advice",
+                
+                nextText:3
+            },
+            {
+                text: "Ignore the wizard's words and continue the quest",
+                nextText: 5
+            }
+        ]
+    },
+    {
+        id: 3,
+        text: "The wizard advises Ozzy to limit his intake of sugary snacks and drinks to stay healthy.",
+        options:[
+            {
+                text: "Thank the wizard for his wise words and bid farewell.",
+                
+                nextText:5
+            },
+            {
+                text: "Ask for more advice",
+                
+                nextText:4
+            }
+
+           
+        ]
+    },
+
+    {
+        id:4,
+        text:"The wizard warns Ozzy to be aware of how much sugar he eats as it can lead to all sorts of health problems in the future. He whispers to Ozzy, sugar is like poison...",
+        options:[
+            {
+                text: "Thank the wizard for his wise words and bid farewell",
+                nextText:5
+            }
+        ]
+
+    },
+
+    {
+        id:5,
+        text: "Ozzy decides to explore the nearby Enchanted Forest, curious to learn more about the effects of sugar. As he journeys through the forest, he encounters magical creatures and beautiful views.",
+        options: [
+            {
+                text: "Talk to the friendly animals",
+               
+                nextText: 6
+            },
+            {
+                text: "Continue Exploring",
+                
+                nextText: 8
+            }
+
+        ]
+    },
+    {
+        id:6,
+        text: "The squirrel says that while sugar can be delicious, eating too much of it can make him feel tired and lazy. The bird also says that too much sugar can also harm his teeth and make him more likely to get sick. They both advise him to enjoy sweet treats in small amounts and make sure to include plenty of healthy foods in his diet.",
+        options: [
+            {
+                text: "Continue with the quest",
+                
+                
+                nextText: 8
+            },
+            {
+                text: "Tell me more",
+                nextText: 7
+            }
+        ]
+    },
+    {
+        id: 7,
+        text: "Well, sugary drinks like soft drinks and fruit juices can be really high in sugar and calories. It is important to stay hydrated with water to keep your body healthy.",
+        options: [
+            {
+                text: "Keep exploring!",
+                nextText: 8
+            },
+        ]
+    },
+    {
+        id: 8,
+        text: "Deep within the Enchanted Forest, Ozzy stumbles upon a dark cave— the secret hiding place of the Sugar Goblin. Inside, he finds shelves filled with sugary treats and sparkling drinks.",
+        options: [
+            {
+                text: "Give in to the temptations",
+                
+                nextText: 9,
+            },
+            {
+                text: "Leave the Goblin's Lair",
+                nextText: 10
+            }
+        ]
+    },
+
+    {
+        id: 9,
+        text: "Ozzy enjoys all the delicious treats that the goblin tempted him with and falls asleep. Sadly, he failed his mission in restoring balance to Sugar land. Better luck next time!",
+        options: [
+            
+            {
+                text: "Restart",
+                nextText: -1
+            }
+        ]
+    },
+   
+    {
+        id:10,
+        text: "Determined to make a difference, he embarks on a quest to find the sacred Healing Stone, said to restore balance to Sugarland.",
+        options: [
+            {
+                text:"Find the Balance Stone",
+               
+                nextText: 13
+            },
+            {
+                text: "Give up",
+                nextText: 11
+            }
+        ]
+    },
+    {
+        id:11 ,
+        text: "Oh no! Don't give up! Ozzy has to restore balance to Sugarland, everyone is counting on him...",
+        options: [
+            {
+                text:"Continue",
+                
+                nextText: 13
+            },
+            {
+                text: "Give up anyway",
+                nextText: 12
+            }
+        ]
+    },
+    {
+        id:12 ,
+        text: "Uh-oh! It looks like Ozzy's failed his mission. Sugarland remains unbalanced.",
+        options: [
+            {
+                text:"Restart",
+                nextText: -1
+            }
+            
+        ]
+    },
+
+    {
+        id:13,
+        text: "After overcoming numerous obstacles, he finally reaches the top of Sugar Mountain, where the sparkling Healing Stone awaits.",
+        options: [
+            {
+                text: "Restore balance",
+                
+                nextText: 15
+            },
+            {
+                text: "Go back home",
+                nextText: 14
+            }
+        ]
+    },
+    {
+        id:14 ,
+        text: "He was almost there! The Sugarland inhabitants wish him the best on his next mission",
+        options: [
+            {
+                text: "Restart",
+                nextText: -1
+            },
+            
+        ]
+    },
+    {
+        id:15,
+        text: "He revived Sugarland! Woohoo! The villagers gather around, grateful for his courage and wisdom. With the lessons learned on his journey, he returns home, ready to make healthier choices and inspire others to do the same.",
+        options: [
+            {
+                text: "Restart",
+                nextText: -1
+            }
+          
+        ]
+    }
+
+]
+
+function showTextNode(textNodeIndex){
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild){
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
+
+    textNode.options.forEach(option => {
+        if (showOption(option)){
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('btns')
+            button.addEventListener('click', () => selectOption(option))
+            optionButtonsElement.appendChild(button)
+        }
+    })
+}   
+
+function showOption(option){
+    return option.requiredState == null || option.requiredState(state)
+}
+
+function selectOption(option){
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0){
+        return startGame()
+    }
+    state= Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+
+}
+
+
+
+
+
+startGame()
+</script>
+</body>
+
+
+</html>

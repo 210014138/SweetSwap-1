@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugar Safari</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a href="quests.php" class="go-back-btn">Back to Quests</a>
+    <div class="sugar-safari-container">
+        <div class="story-box">
+            <div class="story-content">
+                <div id="story-text">Text</div>
+                <div id="option-buttons" class="btn-grid">
+                    <button class="sugar-safari-btns">Option 1</button>
+                    <button class="sugar-safari-btns">Option 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    const textElement = document.querySelector('#story-text');
+    const optionButtonsElement = document.querySelector('#option-buttons');
+
+    let state = {}
+
+
+    function startGame() {
+        state = {}
+        showTextNode(1)
+    }
+
+
+    const textNodes = [
+        {
+            id: 1,
+            text: "Welcome to Sugar Free Island, where exotic and colourful fruits are found....",
+            options:[
+                {
+                    text: "Start",
+                    nextText:2
+                },
+           
+            ]
+        },
+    
+    
+        {
+            id: 2,
+            text: "Emily, a young explorer with a passion for nutrition, discovers that the foods grown on the island provide important vitamins and minerals without the harmful effects of added sugar. ",
+            options:[
+                {
+                    text: "Explore the island more",
+                    nextText:3
+                },
+                {
+                    text: "Try some of the fruits",
+                    nextText: 4
+                }
+            ]
+        },
+
+
+        {
+            id: 3,
+            text: "As Emily journeys deeper into the heart of Sugar-Free Island, she meets lots of friendly animals.",
+            options:[
+                {
+                    text: "Speak to the animals",
+                    nextText:5
+                },
+                {
+                    text: "Emily should continue with her adventure instead",
+                    nextText:6
+                }
+
+           
+            ]
+        },
+
+        {
+            id: 4,
+            text: "Emily discovers the natural sweetness of fruits like berries, mangoes, and pineapples, which satisfy her cravings for sweets.",
+            options:[
+                {
+                    text: "Continue with the adventure",
+                    nextText:6
+                }
+                          
+            ]
+        },
+        {
+            id: 5,
+            text: "The wise old elephant explains the importance of leafy greens. The playful monkeys advise Emily to snack on bananas they contain fibre which helps digestion. Emily learns that nature provides everything she needs to become strong without relying on sugary treats.",
+            options:[
+                {
+                    text: "That's interesting",
+                    nextText:6
+                }
+                          
+            ]
+        },
+        {
+            id: 6,
+            text: "As Emily navigates through the island, she encounters a series of challenges that test her commitment to a sugar-free lifestyle. ",
+            options:[
+                {
+                    text: "Give in to the tempations left behind by the naughty sugar fairies",
+                    nextText:7
+                },
+                {
+                    text:"Stay strong",
+                    nextText:8
+                }
+                          
+            ]
+        },
+        {
+            id: 7,
+            text: "Emily couldn't resist her cravings and fell for the sugary treats. Soon after, she realises that she had made a mistake and wants to continue exploring the island and gain more knowledge so that she doesn't make this mistake again",
+            options:[
+                {
+                    text: "Yes, let's go!",
+                    nextText:9
+                },
+               
+                          
+            ]
+        },
+        {
+            id: 8,
+            text: "Emily discovers healthy options she can have instead of sugary snacks, such as nuts, seeds, and homemade fruit smoothies, which provide energy without the negative effects of added sugars.",
+            options:[
+                {
+                    text: "Woohoo! I knew Emily could do it!",
+                    nextText:9
+                }
+               
+                          
+            ]
+        },
+
+        {
+            id:9,
+            text:"As Emily reaches the top of the Sugar-Free Mountain, she feels joy and happiness.",
+            options:[
+                {
+                    text: "Take in the island's beautiful scenery and crystal-clear waters before heading home",
+                    nextText:10
+                },
+                {
+                    text:"Return home",
+                    nextText:-1
+                }
+            ]
+        },
+
+        {
+            id:10,
+            text:"Surrounded by beautiful views of the island, Emily realises that having a balanced and nutritious makes her feel happy. As Emily leaves the Sugar-Free Island, she carries with her the lessons learned from her safari adventure. ",
+            options:[
+                {
+                    text: "Start again",
+                    nextText:-1
+                },
+                
+            ]
+        }
+
+
+
+
+]
+
+function showTextNode(textNodeIndex){
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild){
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
+
+    textNode.options.forEach(option => {
+        if (showOption(option)){
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('sugar-safari-btns')
+            button.addEventListener('click', () => selectOption(option))
+            optionButtonsElement.appendChild(button)
+        }
+    })
+}   
+
+function showOption(option){
+    return option.requiredState == null || option.requiredState(state)
+}
+
+function selectOption(option){
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0){
+        return startGame()
+    }
+    state= Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+
+}
+
+
+
+
+
+startGame()
+</script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Escape</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a href="quests.php" class="go-back-btn">Back to Quests</a>
+    <div class="sweet-escape-container">
+        <div class="sweet-escape-box">
+            <div class="story-content">
+                <div id="story-text">Text</div>
+                <div id="option-buttons" class="btn-grid">
+                    <button class="sweet-escape-btns">Option 1</button>
+                    <button class="sweet-escape-btns">Option 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const textElement = document.querySelector('#story-text');
+const optionButtonsElement = document.querySelector('#option-buttons');
+
+let state = {}
+
+
+function startGame() {
+    state = {}
+    showTextNode(1)
+}
+
+
+const textNodes = [
+    {
+        id: 1,
+        text: "In the Kingdom of Sugaria, a young knight named Leo is on a daring quest to break the spell of sugar addiction cast upon the land by the Sugar King...",
+        options:[
+            {
+                text: "Start",
+                nextText:2
+            },
+           
+        ]
+    },
+    
+    
+    {
+        id: 2,
+        text: "As Leo sets out on his journey, he encounters the Candy Forest filled with lollipop trees and chocolate rivers. Leo discovers that eating too many sweets can lead to a sugar crash, leaving him feeling tired and lazy.",
+        options:[
+            {
+                text: "Dip his finger in the chocolate river",
+               
+                nextText:3
+            },
+            {
+                text: "Escape the forest",
+                nextText: 4
+            }
+        ]
+    },
+    {
+        id: 3,
+        text: "AAHH! Leo fell into the river and was covered in chocolate from head to toe, unable to complete his mission",
+        options:[
+            {
+                text: "Restart",
+                
+                nextText:-1
+            }
+           
+        ]
+    },
+    {
+        id:4,
+        text:"In the heart of Sugaria lies the Sugar Monster's cave, filled with monstrous creatures made of pure sugar. The stickiness of the sugar makes it hard for Leo to break free from the traps.",
+        options:[
+            {
+                text: "Retreat",
+                nextText: 5
+            },
+            {
+                text:"Slice through the traps with his magical sword and break free",
+                nextText: 6
+            }
+        ]
+    },
+    {
+        id:5,
+        text: "Oh no! It looks like the Sugar King has won once again. How unfortunate.",
+        options:[
+            {
+                text: "Try Again",
+                nextText:-1
+            }
+        ]
+    },
+
+    {
+        id:6,
+        text:"Leo discovers a hidden garden overflowing with colorful fruits and vegetables. Here, he meets wise healers.",
+        options:[
+            {
+                text: "Speak to the wise healers",
+                nextText:7
+            },
+            {
+                text: "Find the Sugar King!",
+                nextText: 8
+            }
+        ]
+    },
+
+    {
+        id:7,
+        text: "The wise healers teach Leo about the power of foods with lots of nutrients in nourishing the body and providing energy. Choosing natural, whole foods over bad, sugary snacks can help him maintain good health.",
+        options:[
+            {
+                text: "Thank the healers for their wise word and continue with the mission",
+                nextText: 8
+            }
+
+        ]
+    },
+
+    {
+        id:8,
+        text:"With the new knowledge, Leo made it to the Sugar King's palace at the top of Mount Sweetness.",
+        options:[
+            {
+                text: "Fall back",
+                nextText:9
+            },
+            {
+                text: "Battle the king and break the sugar addiction spell forever",
+                nextText: 10
+            }
+        ]
+    },
+
+    {
+        id:9,
+        text: "No! Leo was so close to breaking the spell! The citizens of Sugaria, disappointed, still remain under the wicked rule of the Sugar King. Maybe Leo will succeed on his quest next time.",
+        options:[
+            {
+                text: "Start again",
+                nextText:-1
+            }
+        ]
+    },
+    {
+        id:10,
+        text: "In a dramatic battle, Leo defeats the Sugar King and inspires the citizens of Sugaria to choose a healthier, sugar-free lifestyle. With the help of the people, Leo breaks the spell of sugar addiction, freeing Sugaria from the Sugar King's rule.",
+        options:[
+            {
+                text: "Restart",
+                nextText: -1
+            }
+        ]
+    }
+
+    
+
+
+
+]
+
+function showTextNode(textNodeIndex){
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild){
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
+
+    textNode.options.forEach(option => {
+        if (showOption(option)){
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('sweet-escape-btns')
+            button.addEventListener('click', () => selectOption(option))
+            optionButtonsElement.appendChild(button)
+        }
+    })
+}   
+
+function showOption(option){
+    return option.requiredState == null || option.requiredState(state)
+}
+
+function selectOption(option){
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0){
+        return startGame()
+    }
+    state= Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+
+}
+
+
+
+
+
+startGame()
+    </script>
+</body>
+
+
+</html>

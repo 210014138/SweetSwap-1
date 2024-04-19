@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Dreams</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a href="quests.php" class="go-back-btn">Back to Quests</a>
+    <div class="sweet-dreams-container">
+        <div class="sweet-dreams-box">
+            <div class="story-content">
+                <div id="story-text">Text</div>
+                <div id="option-buttons" class="btn-grid">
+                    <button class="sweet-dreams-btns">Option 1</button>
+                    <button class="sweet-dreams-btns">Option 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    const textElement = document.querySelector('#story-text');
+    const optionButtonsElement = document.querySelector('#option-buttons');
+
+    let state = {}
+
+
+    function startGame() {
+        state = {}
+        showTextNode(1)
+    }
+
+
+    const textNodes = [
+        {
+            id: 1,
+            text: "As Jack drifts off to sleep one night, he finds himself transported into a magical universe where dreams come to life...",
+            options:[
+                {
+                    text: "Start",
+                    nextText:2
+                },
+           
+            ]
+        },
+    
+    
+        {
+            id: 2,
+            text: "Jack discovers that an evil sorcerer named Frucius has cast a spell, causing the dream land to be filled with sugary temptations and unhealthy choices.",
+            options:[
+                {
+                    text: "Stop Frucius",
+                    nextText:3
+                },
+                {
+                    text: "Wake up",
+                    nextText: 4
+                }
+            ]
+        },
+
+
+        {
+            id: 3,
+            text: "Jack finds himself in a forest made entirely of sweets. Gummy trees, chocolate rivers, and lollipop bushes stretch as far as the eye can see. However, the people of the forest are feeling sleepy because they eat so much sugar.",
+            options:[
+                {
+                    text: "Navigate through the forest",
+                    nextText:6
+                },
+                {
+                    text: "Lead them in a fun exercise session to help them burn off some of the sugar and boost their energy levels.",
+                    nextText:5
+                }
+
+           
+            ]
+        },
+
+        {
+            id: 4,
+            text: "Oh no! Jack failed to defeat Frucius and so the dream land still remains under his spell...",
+            options:[
+                {
+                    text: "Restart",
+                    nextText:-1
+                }
+                          
+            ]
+        },
+        {
+            id: 5,
+            text: "The people loved Jack's exercise session and thanked him for helping them to become more acive and boosting their energy levels. They were not in the best of shape since they were surrounded by sugar, but Jack encouraged them to look after their health.",
+            options:[
+                {
+                    text: "Bid farewell to the inhabitants of the forest",
+                    nextText:6
+                },
+                {
+                    text: "Offer healthy alternatives hidden within the forest",
+                    nextText:6
+                }
+                          
+            ]
+        },
+        {
+            id: 6,
+            text: "Jack arrives in a village surrounded by a shimmering lake of fizzy pop. The villagers are addicted to the fizzy drinks, and their teeth are beginning to decay.",
+            options:[
+                {
+                    text: "Educate the villagers about the negative impact of lots of sugar on their dental health and well-being.",
+                    nextText:7
+                },
+                {
+                    text:"Keep going",
+                    nextText:8
+                }
+                          
+            ]
+        },
+        {
+            id:7,
+            text:"Jack turns to the villagers and says that when we consume too much sugar, it mixes with the bacteria in our mouths to create acid which then attacks our tooth enamel. Over time, this can lead to tooth decay and cavities, which can be painful and harmful to our overall health.",
+            options:[
+                {
+                    text:"Wow, how interesting!",
+                    nextText:8
+                },
+                {
+                    text:"Remind the villagers to brush their teeth and cut back on fizzy pop then leave.",
+                    nextText:6
+                }
+            ]
+        },
+        {
+            id: 8,
+            text: "Jack finds himself in a desert filled with towering mountains of ice cream, sandy beaches made of sugar, and caramel pools. However, the desert has been desserted. Jack soon discovers that the amount of sweetness has driven away all the animals and plants.",
+            options:[
+                {
+                    text: "Restore balance to the desert",
+                    nextText:9
+                },
+                {
+                    text:"Navigate through the desert",
+                    nextText:10
+                }
+               
+                          
+            ]
+        },
+        {
+            id: 9,
+            text: "Jack finds and plants fruit and vegetable seeds. He melts the ice cream mountains to create water sources for the land, allowing plants and animals to return.",
+            options:[
+                {
+                    text: "Yayyy! Jack did it!",
+                    nextText:10
+                }
+               
+                          
+            ]
+        },
+
+        {
+            id:10,
+            text:"Jack finally reaches Frucius' castle, guarded by sugar-coated minions and surrounded with enchanted sweets. Frucius awaits in the throne room with a big smirk on his face...",
+            options:[
+                {
+                    text: "Confront Frucius",
+                    nextText:11
+                },
+                {
+                    text:"Gather magical artifacts hidden in the castle to weaken Frucius' power",
+                    nextText:12
+                }
+            ]
+        },
+
+        {
+            id:11,
+            text:"Jack and Frucius face off in an exciting battle of dreams versus nightmares.",
+            options:[
+                {
+                    text: "Choose the path of kindness and empathy",
+                    nextText:13
+                },
+                {
+                    text:"Use the knowledge gained to destroy Frucius's spell",
+                    nextText:14
+                }
+                
+            ]
+        },
+        {
+            id:12,
+            text:"Jack finds the Crystal of Clarity which can help him to see through Frucius' illusions and finds the shield of resilience. This enchanted shield provides Jack with protection against Frucius's sugary spells and attacks.",
+            options:[
+                {
+                    text:"Let's find Frucius",
+                    nextText:11
+                }
+            ]
+        },
+        {
+            id:13,
+            text:"Frucius decides to give up his hold over the dream world and join forces with Jack to promote healthier habits and balanced nutrition. Together, they work to restore harmony to the dream world once and for all.",
+            options:[
+                {
+                    text:"Hooray!",
+                    nextText:-1
+                }
+            ]
+            
+        },
+        {
+            id:14,
+            text:"Jack closes his eyes and taps into powerful dream magic. He transformed the sugary treats around him into vibrant fruit and vegetables. Jack stood as he watched Frucius's surroundings crumble. Jack defeated Frucius and restored balance to the dream land.",
+            options:[
+                {
+                    text:"Yes! I knew Jack could do it!",
+                    nextText:-1
+                }
+            ]
+        }
+
+
+
+
+]
+
+function showTextNode(textNodeIndex){
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild){
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
+
+    textNode.options.forEach(option => {
+        if (showOption(option)){
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('sweet-dreams-btns')
+            button.addEventListener('click', () => selectOption(option))
+            optionButtonsElement.appendChild(button)
+        }
+    })
+}   
+
+function showOption(option){
+    return option.requiredState == null || option.requiredState(state)
+}
+
+function selectOption(option){
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0){
+        return startGame()
+    }
+    state= Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+
+}
+
+
+
+
+
+startGame()
+</script>
+
+
+</body>
+
+
+</html>

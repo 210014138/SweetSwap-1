@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ <a href="quests.php" class="go-back-btn">Back to Quests</a>
+    <div class="treasure-hunt-container">
+        <div class="treasure-hunt-box">
+            <div class="story-content">
+                <div id="story-text">Text</div>
+                <div id="option-buttons" class="btn-grid">
+                    <button class="treasure-hunt-btns">Option 1</button>
+                    <button class="treasure-hunt-btns">Option 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    const textElement = document.querySelector('#story-text');
+    const optionButtonsElement = document.querySelector('#option-buttons');
+
+    let state = {}
+
+
+    function startGame() {
+        state = {}
+        showTextNode(1)
+    }
+
+
+    const textNodes = [
+        {
+            id: 1,
+            text: "In the port town of Sweet Haven, rumors swirl of a legendary treasure hidden on a remote island...",
+            options:[
+                {
+                    text: "Start",
+                    nextText:2
+                },
+           
+            ]
+        },
+    
+    
+        {
+            id: 2,
+            text: "Captain Charlie and his crew set sail from the Port of Discovery, eager to start their quest for the legendary Sugar-Free Treasure.",
+            options:[
+                {
+                    text: "Navigate through the waters filled with sugary temptations.",
+                    nextText:3
+                },
+                {
+                    text: "Recruit additional crew members.",
+                    nextText: 3
+                }
+            ]
+        },
+        {
+            id: 3,
+            text: "The crew arrives at the Island of Temptation, rumored to be the home of the Sugar-Free Treasure. However, they soon discover that the island is protected by sugar-loving pirates.",
+            options:[
+                {
+                    text: "Sneak past the pirates.",
+                    nextText:4
+                },
+                {
+                    text: "Confront the pirates in a battle.",
+                    nextText:5
+                }
+
+                
+            ]
+        },
+        {
+            id:4,
+            text:"Captain Charlie and his crew journey deep into the heart of the island, where they discover the entrance to the Cave of Cravings, filled with temptations and hidden dangers.",
+            options:[
+                {
+                    text:"Stay focused on the mission",
+                    nextText: 6
+                },
+                {
+                    text:"Seek guidance from the wise old elf who lives within the cave.",
+                    nextText: 7
+                }
+            ]
+        },
+        {
+            id:5,
+            text:"Captain Charlie gathers his crew, leading them in a fierce battle against the pirates. With the pirates defeated, they can now continue with their quest.",
+            options:[
+                {
+                    text:"Resume the treasure hunt!",
+                    nextText:4
+                }
+            ]
+        },
+        {
+            id:6,
+            text:"At the heart of the cave, Captain Charlie and his crew come face-to-face with the Sugar King—the guardian of the Sugar-Free Treasure.",
+            options:[
+                {
+                    text:"Challenge the Sugar King to a contest to prove they are worthy of the treasure.",
+                    nextText: 8
+                },
+                {
+                    text:"Join forces with the islanders to defeat the Sugar King.",
+                    nextText: 9
+                }
+            ]
+
+        },
+        {
+            id:7,
+            text:"The elf teaches them about self-control and the importance of not giving in to their temptations for sweet treats.",
+            options:[
+                {
+                    text:"Let's find the treasure!",
+                    nextText:6
+                }
+               
+            ]
+        },
+        {
+            id:8,
+            text:"They race through the jungle, solving puzzles, and making healthy choices to showcase their worthiness and commitment, so the Sugar King agrees to hand over the Sugar-Free Treasure.",
+            options:[
+                {
+                    text:"Hooray! What happens next?",
+                    nextText: 9
+                }
+            ]
+        },
+        {
+            id:9,
+            text:"With the Sugar King defeated and the island freed from from his power, Captain Charlie and his crew finally uncover the Sugar-Free Treasure",
+            options:[
+                {
+                    text:"Share the treasure with the people of the island before returning back to Sweet Haven.",
+                    nextText: -1
+                },
+                {
+                    text:"Set sail on a new quest to spread the message of the sugar-free lifestyle to other lands.",
+                    nextText: 1
+                }
+            ]
+        },
+
+        {
+            id:10,
+            text:"As Captain Charlie and his crew sail into the sunset, they reflect on the lessons learned from their quest for the Sugar-Free Treasure.",
+            options:[
+                {
+                    text: "Restart",
+                    nextText:-1
+                }
+            ]
+        }
+
+    ]
+
+    function showTextNode(textNodeIndex){
+        const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+        textElement.innerText = textNode.text
+        while (optionButtonsElement.firstChild){
+            optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+        }
+
+        textNode.options.forEach(option => {
+            if (showOption(option)){
+                const button = document.createElement('button')
+                button.innerText = option.text
+                button.classList.add('treasure-hunt-btns')
+                button.addEventListener('click', () => selectOption(option))
+                optionButtonsElement.appendChild(button)
+            }
+        })
+    }   
+
+    function showOption(option){
+        return option.requiredState == null || option.requiredState(state)
+    }
+
+    function selectOption(option){
+        const nextTextNodeId = option.nextText
+        if (nextTextNodeId <= 0){
+            return startGame()
+        }
+        state= Object.assign(state, option.setState)
+        showTextNode(nextTextNodeId)
+
+    }
+
+
+
+    startGame()
+    
+</script>
+</body>
+
+
+</html>

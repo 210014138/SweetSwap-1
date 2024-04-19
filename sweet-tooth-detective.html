@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Tooth Detective</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a href="quests.php" class="go-back-btn">Back to Quests</a>
+    <div class="detective-container">
+        <div class="detective-box">
+            <div class="story-content">
+                <div id="story-text">Text</div>
+                <div id="option-buttons" class="btn-grid">
+                    <button class="detective-btns">Option 1</button>
+                    <button class="detective-btns">Option 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const textElement = document.querySelector('#story-text');
+const optionButtonsElement = document.querySelector('#option-buttons');
+
+let state = {}
+
+
+function startGame() {
+    state = {}
+    showTextNode(1)
+}
+
+
+const textNodes = [
+    {
+        id: 1,
+        text: "In the lively town of Sweetville, two young detective, Maya and Elliot, embark on a mission to solve the mystery of disappearing energy that has left people feeling tired and lazy...",
+        options:[
+            {
+                text: "Start",
+                nextText:2
+            },
+           
+        ]
+    },
+    
+    
+    {
+        id: 2,
+        text: "Maya and Elliot delve into the case and discover a pattern. People are experiencing sudden crashes in energy levels after consuming sugary snacks and drinks. They learn about the impact of sugar on energy levels and begin to suspect that sugar may be the reason behind the city's energy crisis.",
+        options:[
+            {
+                text: "Snoop around Sweetville",
+               
+                nextText:4
+            },
+            {
+                text: "Search for more clues",
+                nextText: 3
+            }
+        ]
+    },
+   
+    {
+        id:3,
+        text:"With the help of her trusty magnifying glass and Elliot's keen detective skills, they find a bunch of clues that all point to one person being responsible for Sweetville's disappearing energy crisis, the Sugar Queen.",
+        options:[
+            {
+                text:"Confront the Sugar Queen!",
+                nextText: 5
+            },
+            {
+                text:"Keep going undercover",
+                nextText:4
+            }
+        ]
+    },
+    
+    {
+        id: 4,
+        text:"Maya and Elliot sneakily observe Sweetville's residents habits as they indulge in sugary treats. They gather useful information into the effects of sugar on mood, energy and overall health",
+        options:[
+            {
+                text:"Tell me more",
+                nextText:6
+            },
+            {
+                text: "Approach the Sugar Queen with the findings",
+                nextText: 5
+            }
+        ]
+    },
+    {
+        id:5,
+        text:"With their evidence, Maya and Elliot confront the Sugar Queen, the mastermind behind Sweetville's sugar mystery. ",
+        options:[
+            {
+                text:"Urge the Sugar Queen to take responsibility for her actions and help the people to eat less sugar.",
+                nextText:7
+            },
+            {
+                text:"Return to Sweetville",
+                nextText:8
+            }
+        ]
+    },
+    {
+        id:6,
+        text:"Maya and Elliot notice that many residents display signs of sugar cravings, reaching for sugary snacks whenever they feel tired or low on energy. She notices that individuals become restless, agitated, or easily frustrated after consuming sugary snacks.",
+        options:[
+            {
+                text:"Let's confront the Sugar Queen!",
+                nextText: 5
+            }
+        ]
+    },
+    {
+        id:7,
+        text:"With the Sugar Queen's help, Maya and Elliot launch raise awareness about the dangers of having too much sugar and suggest healthier alternatives. They've solved the mystery and helped the citizen's of Sweetville!",
+        options:[
+            {
+                text:"Start again",
+                nextText:-1
+            }
+        ]
+    },
+
+    {
+        id:8,
+        text:"Uh-oh! Maya and Elliot have failed to stop the Sugar Queen. Could they restore energy levels to Sweetville next time? You'll have to find out...",
+        options:[
+            {
+                text:"Restart",
+                nextText:-1
+            }
+        ]
+    }
+
+
+]
+
+function showTextNode(textNodeIndex){
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+    textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild){
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
+
+    textNode.options.forEach(option => {
+        if (showOption(option)){
+            const button = document.createElement('button')
+            button.innerText = option.text
+            button.classList.add('detective-btns')
+            button.addEventListener('click', () => selectOption(option))
+            optionButtonsElement.appendChild(button)
+        }
+    })
+}   
+
+function showOption(option){
+    return option.requiredState == null || option.requiredState(state)
+}
+
+function selectOption(option){
+    const nextTextNodeId = option.nextText
+    if (nextTextNodeId <= 0){
+        return startGame()
+    }
+    state= Object.assign(state, option.setState)
+    showTextNode(nextTextNodeId)
+
+}
+
+
+
+
+
+startGame()
+    </script>
+</body>
+
+
+</html>
